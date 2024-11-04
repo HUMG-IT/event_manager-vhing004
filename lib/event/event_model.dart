@@ -102,19 +102,19 @@ class EventModel {
   }
 }
 
-extension ExtEventModel on EventModel {
-  String get formatedStartTimeString =>
-      "${startTime.hour} : ${startTime.minute}, ${startTime.day} / ${startTime.month} / ${startTime.year}";
-  String get formatedEndTimeString =>
-      "${endTime.hour} : ${endTime.minute}, ${endTime.day} / ${endTime.month} / ${endTime.year}";
-}
-
 // extension ExtEventModel on EventModel {
-//   String get formatedStartTimeString => _formatTimeString(startTime);
-//   String get formatedEndTimeString => _formatTimeString(endTime);
-
-//   String _formatTimeString(DateTime datetime) {
-//     final DateFormat formatter = DateFormat('H:mm, dd/MM/yyyy');
-//     return formatter.format(datetime);
-//   }
+//   String get formatedStartTimeString =>
+//       "${startTime.hour} : ${startTime.minute}, ${startTime.day} / ${startTime.month} / ${startTime.year}";
+//   String get formatedEndTimeString =>
+//       "${endTime.hour} : ${endTime.minute}, ${endTime.day} / ${endTime.month} / ${endTime.year}";
 // }
+
+extension ExtEventModel on EventModel {
+  String get formatedStartTimeString => _formatTimeString(startTime);
+  String get formatedEndTimeString => _formatTimeString(endTime);
+
+  String _formatTimeString(DateTime datetime) {
+    final DateFormat formatter = DateFormat('H:mm, dd/MM/yyyy');
+    return formatter.format(datetime);
+  }
+}
