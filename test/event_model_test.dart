@@ -51,7 +51,7 @@ void main() {
 
       final map = event.toMap();
       final newEvent = EventModel.fromMap(map);
-
+ 
       expect(newEvent, equals(event));
     });
 
